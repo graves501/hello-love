@@ -1,30 +1,32 @@
+local love = _G.love
+
 function love.load()
-    x = 100
-    y = 50
-    width = 200
-    height = 150
-    rectangle_draw_mode = "fill"
-    move_speed = 200
+    X = 100
+    Y = 50
+    WIDTH = 200
+    HEIGHT = 150
+    BOX_DRAW_MODE = "fill"
+    MOVE_SPEED = 200
 end
 
 function love.draw()
-    love.graphics.rectangle(rectangle_draw_mode, x, y, width, height)
+    love.graphics.rectangle(BOX_DRAW_MODE, X, Y, WIDTH, HEIGHT)
 end
 
 function love.update(delta_time)
     if love.keyboard.isDown("up") then
-        y = y - move_speed * delta_time
+        Y = Y - MOVE_SPEED * delta_time
     end
 
     if love.keyboard.isDown("down") then
-        y = y + move_speed * delta_time
+        Y = Y + MOVE_SPEED * delta_time
     end
 
     if love.keyboard.isDown("right") then
-        x = x + move_speed * delta_time
+        X = X + MOVE_SPEED * delta_time
     end
 
     if love.keyboard.isDown("left") then
-        x = x - move_speed * delta_time
+        X = X - MOVE_SPEED * delta_time
     end
 end
